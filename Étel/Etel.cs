@@ -8,9 +8,9 @@ namespace Étel
 {
 	internal abstract class Etel
 	{
-		double caloriesPerDkg;
-		double weight;
-		string name;
+		 double caloriesPerDkg;s
+		 double weight;
+		 string name;
 		public bool IsItDairyFree { get; set; }
 		public double CaloriesPerDkg { get => caloriesPerDkg; set => caloriesPerDkg = value; }
 		public double Weight { get => weight; set => weight = value; }
