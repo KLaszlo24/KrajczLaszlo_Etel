@@ -19,18 +19,44 @@
 				new SültHúsok(9.1, 160, "Nyúl", false),
 			};
 
-		}
+            Console.WriteLine("Választható ételek:");
+			for (int i = 0; i <	etterem.Count; i++)
+			{
+				Console.WriteLine(etterem[i].ToString());
+			}
+            Console.WriteLine();
 
-		public double totalCalories(List<Etel> etterem)
+
+            List<Etel> dairyFree = new List<Etel>();
+			for (int i = 0;i < etterem.Count; i++)
+			{
+				if (etterem[i].IsItDairyFree == true)
+				{
+					dairyFree.Add(etterem[i]);
+				}
+			}
+
+            Console.WriteLine("Tej nélküli ételeink:");
+            for (int i = 0; i < dairyFree.Count; i++)
+            {
+				Console.WriteLine(dairyFree[i].Name);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            Console.WriteLine($"Ételeink alapján az összes kalória: {totalCalories(etterem)}");
+        }
+
+		public static double totalCalories(List<Etel> etterem)
 		{
 			double total = 0;
 			for (int i = 0; i < etterem.Count; i++)
 			{
-				total += etterem[i].CaloriesPerDkg;
-                Console.WriteLine($"Maximum kcal: {total}");
-                return total;
+				total += etterem[i].CountCalories();
 			}
-			return 0;
+			return total;
 		}
 	}
 }

@@ -27,5 +27,11 @@ namespace Étel
 				this.name = name;
 				IsItDairyFree = false;
 		}
-	}
+
+
+        public override string? ToString()
+        {
+			return $"{name} ételünk tartalmaz: {caloriesPerDkg} kcal-át/dkg, {weight}dkg adagban";
+        }
+    }
 }
